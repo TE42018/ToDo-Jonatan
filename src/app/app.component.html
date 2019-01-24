@@ -4,14 +4,11 @@
 
 <div>
     <input type="text" #newTodo />
-    <select>
+    <select #option>
         <option *ngFor="let option of [1,2,3,4,5]">{{option}}</option>
     </select>
-    <button (click)="addTodo(newTodo.value); newTodo.value=''">Add</button>
+    <button (click)="addTodo(newTodo.value, option.value); newTodo.value=''">Add</button>
 </div>
-
-
-
 
 
 <div class="list-container">

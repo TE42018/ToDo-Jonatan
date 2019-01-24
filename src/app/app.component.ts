@@ -30,10 +30,10 @@ export class AppComponent {
     },
   ];
 
-  addTodo(newTodoLabel) {
+  addTodo(newTodoLabel, option) {
     const newTodo = {
       label: newTodoLabel,
-      priority: 1,
+      priority: option,
       done: false
     };
     this.todos.push(newTodo);
