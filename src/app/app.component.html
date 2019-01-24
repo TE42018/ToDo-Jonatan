@@ -2,24 +2,35 @@
     {{title}}
 </h1>
 
-<input type="text" #newTodo />
-<button (click)="addTodo(newTodo.value); newTodo.value=''">Add</button>
+<div>
+    <input type="text" #newTodo />
+    <select>
+        <option *ngFor="let option of [1,2,3,4,5]">{{option}}</option>
+    </select>
+    <button (click)="addTodo(newTodo.value); newTodo.value=''">Add</button>
+</div>
 
-<table>
-    <tr>
-        <th>label</th>
-        <th>priority</th>
-        <th>done</th>
-        <th>actions</th>
-    </tr>
-    <tr *ngFor="let todo of todos">
-        <td>{{todo.label}}</td>
-        <td>{{todo.priority}}</td>
-        <td>{{todo.done ? '&#10003;' : '&#10005;'}}</td>
-        <td>
-            <button (click)="deleteTodo(todo)">delete</button>
-        </td>
-    </tr>
-</table>
+
+
+
+
+<div class="list-container">
+    <div class="row header">
+        <span class="item">label</span>
+        <span class="item">priority</span>
+        <span class="item">done</span>
+        <span class="item">actions</span>
+    </div> <br>
+    <div class="body">
+        <div *ngFor="let todo of todos" class="row">
+            <span class="item">{{todo.label}}</span>
+            <span class="item">{{todo.priority}}</span>
+            <span class="item">{{todo.done ? '&#10003;' : '&#10005;'}}</span>
+            <span class="item">
+                <button (click)="deleteTodo(todo)">delete</button>
+            </span>
+        </div>
+    </div>
+</div>
 
 <router-outlet></router-outlet>
