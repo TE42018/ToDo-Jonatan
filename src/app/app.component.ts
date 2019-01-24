@@ -31,7 +31,7 @@ export class AppComponent {
   ];
 
   addTodo(newTodoLabel) {
-    var newTodo = {
+    const newTodo = {
       label: newTodoLabel,
       priority: 1,
       done: false
