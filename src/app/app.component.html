@@ -11,6 +11,7 @@
 </div>
 
 
+
 <div class="list-container">
     <div class="row header">
         <span class="item">label</span>
@@ -22,9 +23,11 @@
         <div *ngFor="let todo of todos" class="row">
             <span class="item">{{todo.label}}</span>
             <span class="item">{{todo.priority}}</span>
-            <span class="item">{{todo.done ? '&#10003;' : '&#10005;'}}</span>
             <span class="item">
-                <button (click)="deleteTodo(todo)">delete</button>
+                <button class="donebtn" [ngClass]="{'clicked': todo.done}" (click)="togglePressed(todo)">done</button>
+            </span>
+            <span class="item">
+                <button class="deletebtn" (click)="deleteTodo(todo)">delete</button>
             </span>
         </div>
     </div>

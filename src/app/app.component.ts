@@ -7,28 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'My ToDo app';
+  buttonPressed: boolean = false;
   todos = [
-    {
-      label: 'köp bil ',
-      priority: 3,
-      done: false,
-    },
     {
       label: 'köp redbull ',
       priority: 5,
       done: true,
     },
-    {
-      label: 'köp mat ',
-      priority: 4,
-      done: false,
-    },
-    {
-      label: 'köp hus ',
-      priority: 1,
-      done: false,
-    },
   ];
+
+  togglePressed(todo){
+    todo.done = !todo.done;
+  }
 
   addTodo(newTodoLabel, option) {
     const newTodo = {
