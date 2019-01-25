@@ -16,12 +16,15 @@
     <div class="row header">
         <span class="item">label</span>
         <span class="item">priority</span>
+        <span class="item">deadline</span>
         <span class="item">done</span>
         <span class="item">actions</span>
     </div> <br>
     <div class="body">
         <div *ngFor="let todo of todos" class="row">
             <span class="item">{{todo.label}}</span>
+            <span class="item">{{todo.priority}}</span>
+            <!--test för deadline-->
             <span class="item">{{todo.priority}}</span>
             <span class="item">
                 <button class="donebtn" [ngClass]="{'clicked': todo.done}" (click)="togglePressed(todo)">done</button>
