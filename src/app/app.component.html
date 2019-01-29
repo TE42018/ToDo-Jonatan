@@ -4,10 +4,13 @@
 
 <div>
     <input type="text" #newTodo />
-    <select #option>
-        <option *ngFor="let option of [1,2,3,4,5]">{{option}}</option>
+    <select #priority>
+        <option *ngFor="let priority of [1,2,3,4,5]">{{priority}}</option>
     </select>
-    <button (click)="addTodo(newTodo.value, option.value); newTodo.value=''">Add</button>
+    <select #deadline>
+        <option *ngFor="let deadline of [1,2,3,4,5]">{{deadline}}</option>
+    </select>
+    <button (click)="addTodo(newTodo.value, priority.value, deadline.value); newTodo.value=''">Add</button>
 </div>
 
 
@@ -24,8 +27,7 @@
         <div *ngFor="let todo of todos" class="row">
             <span class="item">{{todo.label}}</span>
             <span class="item">{{todo.priority}}</span>
-            <!--test för deadline-->
-            <span class="item">{{todo.priority}}</span>
+            <span class="item">{{todo.deadline}}</span>
             <span class="item">
                 <button class="donebtn" [ngClass]="{'clicked': todo.done}" (click)="togglePressed(todo)">done</button>
             </span>

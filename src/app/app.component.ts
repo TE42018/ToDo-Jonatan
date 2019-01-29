@@ -12,6 +12,7 @@ export class AppComponent {
     {
       label: 'köp redbull ',
       priority: 5,
+      deadline: 3,
       done: true,
     },
   ];
@@ -20,10 +21,11 @@ export class AppComponent {
     todo.done = !todo.done;
   }
 
-  addTodo(newTodoLabel, option) {
+  addTodo(newTodoLabel, priority, deadline) {
     const newTodo = {
       label: newTodoLabel,
-      priority: option,
+      priority: priority,
+      deadline: deadline,
       done: false
     };
     this.todos.push(newTodo);
